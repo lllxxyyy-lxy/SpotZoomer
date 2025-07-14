@@ -57,3 +57,22 @@ We provide detailed steps and tutorials for data preprocessing on different data
 - 📘 [Tutorial2-Xenium processing.ipynb](Tutorial2-Xenium%20processing.ipynb): Preprocessing steps for Xenium data.
 - ✅ For Visium: No special preprocessing is required. You can directly use `pseudo_st.csv` and `pseudo_locs.csv` as the expression matrix and spatial coordinates.
 
+
+
+## Demo for VISD training and inferring high resolution gene profile in Mouse Brain datasets
+
+Due to its large size, the demo dataset is hosted on Zenodo: [Download here](https://zenodo.org/records/12800375).  
+After downloading, place the files in the `data/` directory of the project.
+
+A full tutorial demonstrating how to train VISD and visualize predicted gene expression is also available:  
+📘 [Tutorial3-Demo in MouseBrain.ipynb](Tutorial3-Demo%20in%20MouseBrain.ipynb)
+
+## Baselines
+
+Below are the sources of several representative baseline methods.  
+We sincerely thank the authors for generously sharing their work.
+
+- [iStar](https://github.com/daviddaiweizhang/istar): Performs super-resolution gene expression prediction from hierarchical histological features using a feedforward neural network.  
+- [XFuse](https://github.com/ludvb/xfuse): Integrates spatial transcriptomics (ST) data and histology images via a deep generative model to infer high-resolution gene expression profiles.  
+- [TESLA](https://github.com/jianhuupenn/TESLA): Generates high-resolution gene expression profiles using a Euclidean distance-based metric that captures similarities in physical locations and histological features between superpixels and measured spots.  
+- [scstGCN](https://github.com/wenwenmin/scstGCN): Predicts super-resolution gene expression from multimodal feature maps using a weakly supervised graph convolutional network framework.
