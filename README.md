@@ -98,3 +98,8 @@ This project is released under the MIT License. See [LICENSE](LICENSE) for detai
 
 We welcome questions, feedback, and contributions!  
 Feel free to open an [issue](https://github.com/yourusername/VISD/issues) or submit a pull request.
+
+## 🙏 Acknowledgements
+
+We are inspired by [iStar](https://github.com/daviddaiweizhang/istar), and the Vision Transformer used in our model is pre-trained by [UNI](https://github.com/mahmoodlab/UNI).  
+We gratefully acknowledge the authors for their outstanding work.
