@@ -66,7 +66,7 @@ We provide detailed tutorials to help you preprocess datasets from different pla
 ## 🚀 Demo: Training VISD and Predicting High-Resolution Gene Expression (Mouse Brain)
 
 Due to its large size, the demo dataset is hosted on Zenodo:  
-📦 [Download from Zenodo](https://zenodo.org/records/12800375)
+📦 [Download from Zenodo](https://zenodo.org/records/15878397)
 
 After downloading, place the files in the project's `data/` directory.
 
