@@ -1,78 +1,100 @@
 # VISD
 
-VISD: Inferring high-resolution spatial transcriptomics across platforms using cross-sample transfer learning
+**VISD: Inferring High-Resolution Spatial Transcriptomics Across Platforms Using Cross-Sample Transfer Learning**
 
-In this study, we introduce VISD, a deep generative model that enhances the spatial resolution
-of Visium data via knowledge transfer from high-resolution spatial transcriptomics platforms.
+VISD is a deep generative model designed to enhance the spatial resolution of Visium data by transferring knowledge from high-resolution spatial transcriptomics platforms.
 
 ![VISD.png](VISD.png)
 
+---
 
+## 🔧 Installation
 
-## Installation
+1. **Create a conda environment:**
 
-1.  Create an environment from source:
-
-   ```
+   ```bash
    conda create -n visd python=3.10 -y
    conda activate visd
    ```
 
-2. Dependency Installation
+2. **Install dependencies:**
 
-   ```
+   ```bash
    pip install -r requirements.txt
    ```
 
-   
+---
 
-## Data
+## 📁 Data
 
-All the datasets used in VISD can be downloaded from 10x Genomics: https://www.10xgenomics.com/datasets?configure%5BhitsPerPage%5D=50&configure%5BmaxValuesPerFacet%5D=1000&page=2
+All datasets used in VISD can be downloaded from the 10x Genomics data repository:  
+🔗 https://www.10xgenomics.com/datasets?configure%5BhitsPerPage%5D=50&configure%5BmaxValuesPerFacet%5D=1000&page=2
 
-### Required input format for training data
+### 📥 Required Input Format for Training
 
-- `re_image.tif`：Raw histology image
-- `pseudo_st.csv`：Gene count matrix。
+The following files are required as input for training:
+
+- `re_image.tif` — Raw histology image.
+- `pseudo_st.csv` — Gene count matrix.
   - Row 1: Gene names.
-  - Row 2 and after: Each row is a spot.
-    - Column 1: Spot ID.
-    - Column 2 and after: Each column is a gene.
-- `pseudo_locs.csv`：Spot locations
-  - Row 1: Header
-  - Row 2 and after: Each row is a spot. Must match rows in `pseudo_st.csv`
+  - Row 2 onward: One row per spot.
     - Column 1: Spot ID
-    - Column 2: x-coordinate (horizontal axis). Must be in the same space as axis-1 (column) of the array indices of pixels in `re_image.tif`.
-    - Column 3: y-coordinate (vertical axis). Must be in the same space as axis-0 (row) of the array indices of pixels in `re_image.tif`.
-- `mask.png`：Tissue segmentation based on the valid sequencing area.
-- `gene_names.txt`: Gene list.
-- `pixel-size-raw.txt`：Side length (in micrometers) of pixels in `re_image.tif`.This value is usually between 0.1 and 1.0.
-- `radius-raw.txt`：Number of pixels per spot radius in `re_image.tif`.
+    - Column 2 and onward: Gene expression values
+- `pseudo_locs.csv` — Spot coordinates.
+  - Row 1: Header
+  - Row 2 onward: One row per spot, matching `pseudo_st.csv`
+    - Column 1: Spot ID  
+    - Column 2: x-coordinate (horizontal, matches column index of `re_image.tif`)  
+    - Column 3: y-coordinate (vertical, matches row index of `re_image.tif`)
+- `mask.png` — Tissue segmentation mask indicating valid sequencing area.
+- `gene_names.txt` — List of gene names.
+- `pixel-size-raw.txt` — Physical pixel size (in micrometers) in `re_image.tif`. Typically between 0.1 and 1.0.
+- `radius-raw.txt` — Spot radius in number of pixels in `re_image.tif`.
 
-### Data preprocessing
+---
 
-We provide detailed steps and tutorials for data preprocessing on different data platforms, which you can use directly to process your own data.
+### 🧼 Data Preprocessing
 
-- 📘 [Tutorial1-HD processing.ipynb](Tutorial1-HD%20processing.ipynb): Preprocessing steps for Visium HD data.
-- 📘 [Tutorial2-Xenium processing.ipynb](Tutorial2-Xenium%20processing.ipynb): Preprocessing steps for Xenium data.
-- ✅ For Visium: No special preprocessing is required. You can directly use `pseudo_st.csv` and `pseudo_locs.csv` as the expression matrix and spatial coordinates.
+We provide detailed tutorials to help you preprocess datasets from different platforms. These tutorials can also be adapted for your own data.
 
+- 📘 [Tutorial1-HD processing.ipynb](Tutorial1-HD%20processing.ipynb): Preprocessing for Visium HD data  
+- 📘 [Tutorial2-Xenium processing.ipynb](Tutorial2-Xenium%20processing.ipynb): Preprocessing for Xenium data  
+- ✅ **For Visium:** No special preprocessing is required. You can directly use `pseudo_st.csv` and `pseudo_locs.csv` as the expression matrix and spatial coordinates.
 
+---
 
-## Demo for VISD training and inferring high resolution gene profile in Mouse Brain datasets
+## 🚀 Demo: Training VISD and Predicting High-Resolution Gene Expression (Mouse Brain)
 
-Due to its large size, the demo dataset is hosted on Zenodo: [Download here](https://zenodo.org/records/12800375).  
-After downloading, place the files in the `data/` directory of the project.
+Due to its large size, the demo dataset is hosted on Zenodo:  
+📦 [Download from Zenodo](https://zenodo.org/records/12800375)
 
-A full tutorial demonstrating how to train VISD and visualize predicted gene expression is also available:  
-📘 [Tutorial3-Demo in MouseBrain.ipynb](Tutorial3-Demo%20in%20MouseBrain.ipynb)
+After downloading, place the files in the project's `data/` directory.
 
-## Baselines
+A complete tutorial is available that walks you through training VISD and visualizing the predicted high-resolution gene expression:
 
-Below are the sources of several representative baseline methods.  
-We sincerely thank the authors for generously sharing their work.
+- 📘 [Tutorial3-Demo in MouseBrain.ipynb](Tutorial3-Demo%20in%20MouseBrain.ipynb)
 
-- [iStar](https://github.com/daviddaiweizhang/istar): Performs super-resolution gene expression prediction from hierarchical histological features using a feedforward neural network.  
-- [XFuse](https://github.com/ludvb/xfuse): Integrates spatial transcriptomics (ST) data and histology images via a deep generative model to infer high-resolution gene expression profiles.  
-- [TESLA](https://github.com/jianhuupenn/TESLA): Generates high-resolution gene expression profiles using a Euclidean distance-based metric that captures similarities in physical locations and histological features between superpixels and measured spots.  
-- [scstGCN](https://github.com/wenwenmin/scstGCN): Predicts super-resolution gene expression from multimodal feature maps using a weakly supervised graph convolutional network framework.
+---
+
+## 📊 Baseline Methods
+
+We compare VISD against several representative baseline methods.  
+We sincerely thank the authors for their open-source contributions:
+
+- [**iStar**](https://github.com/daviddaiweizhang/istar): Predicts super-resolution gene expression from hierarchical histological features using a feedforward neural network.  
+- [**XFuse**](https://github.com/ludvb/xfuse): Integrates spatial transcriptomics data and histology images using a deep generative model to infer high-resolution gene expression.  
+- [**TESLA**](https://github.com/jianhuupenn/TESLA): Generates high-resolution gene expression profiles using a Euclidean distance metric based on spatial and histological similarity between superpixels and measured spots.  
+- [**scstGCN**](https://github.com/wenwenmin/scstGCN): Predicts super-resolution gene expression from multimodal feature maps using a weakly supervised graph convolutional network framework.
+
+---
+
+## 📄 License
+
+This project is released under the MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## 🙋‍♀️ Contact & Contribution
+
+We welcome questions, feedback, and contributions!  
+Feel free to open an [issue](https://github.com/yourusername/VISD/issues) or submit a pull request.
