@@ -53,7 +53,7 @@ All the datasets used in VISD can be downloaded from 10x Genomics: https://www.1
 
 We provide detailed steps and tutorials for data preprocessing on different data platforms, which you can use directly to process your own data.
 
-- For Visium HD, you can check this tutorial [Tutorial1-HD processing.ipynb](Tutorial1-HD processing.ipynb) for preprocessing details.
+- 📘 [Tutorial1-HD processing.ipynb](Tutorial1-HD%20processing.ipynb): Preprocessing steps for Visium HD data.
+- 📘 [Tutorial2-Xenium processing.ipynb](Tutorial2-Xenium%20processing.ipynb): Preprocessing steps for Xenium data.
+- ✅ For Visium: No special preprocessing is required. You can directly use `pseudo_st.csv` and `pseudo_locs.csv` as the expression matrix and spatial coordinates.
 
-- For Xenium, you can check this tutorial [Tutorial2-Xenium processing.ipynb](Tutorial2-Xenium processing.ipynb) for preprocessing details.
-- For Visium, No special processing is required, the expression matrix and spatial coordinates can be directly replaced with `pseudo_st.csv` and` pseudo_locs.csv`
