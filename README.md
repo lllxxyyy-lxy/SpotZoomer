@@ -30,7 +30,7 @@ VISD is a deep generative model designed to enhance the spatial resolution of Vi
 All datasets used in VISD can be downloaded from the 10x Genomics data repository:  
 🔗 [10x Genomics](https://www.10xgenomics.com/datasets?configure%5BhitsPerPage%5D=50&configure%5BmaxValuesPerFacet%5D=1000&page=2)
 
-For detailed dataset information, please refer to the **Code Availability** section of the paper.
+For detailed dataset information, please refer to the **Data Availability** section of the paper.
 
 ### 📥 Required Input Format for Training
 
