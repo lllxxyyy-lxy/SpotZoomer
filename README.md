@@ -1,8 +1,8 @@
-# VISD
+# TransSR
 
-**VISD: Inferring High-Resolution Spatial Transcriptomics Across Platforms Using Cross-Sample Transfer Learning**
+**Generating super-resolution spatial transcriptomics data by transfer learning**
 
-VISD is a deep generative model designed to enhance the spatial resolution of Visium data by transferring knowledge from high-resolution spatial transcriptomics platforms.
+TransSR is a deep generative model designed to enhance the spatial resolution of Visium data by transferring knowledge from high-resolution spatial transcriptomics platforms.
 
 ![VISD.png](VISD.png)
 
