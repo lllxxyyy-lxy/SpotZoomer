@@ -4,7 +4,7 @@
 
 TransSR is a deep generative model designed to enhance the spatial resolution of Visium data by transferring knowledge from high-resolution spatial transcriptomics platforms.
 
-![TransSR.png](TransSR.png)
+![model.png](model.png)
 
 ---
 
