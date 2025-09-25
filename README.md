@@ -4,7 +4,7 @@
 
 SpotZoomer is a deep generative model designed to enhance the spatial resolution of Visium data by transferring knowledge from high-resolution spatial transcriptomics platforms.
 
-![model.png](model.png)
+![SpotZoomer.png](SpotZoomer.png)
 
 ---
 
@@ -13,8 +13,8 @@ SpotZoomer is a deep generative model designed to enhance the spatial resolution
 1. **Create a conda environment:**
 
    ```bash
-   conda create -n TransSR python=3.10 -y
-   conda activate TransSR
+   conda create -n SpotZoomer python=3.10 -y
+   conda activate SpotZoomer
    ```
 
 2. **Install dependencies:**
@@ -27,7 +27,7 @@ SpotZoomer is a deep generative model designed to enhance the spatial resolution
 
 ## 📁 Data
 
-All datasets used in TransSR can be downloaded from the 10x Genomics data repository:  
+All datasets used in SpotZoomer can be downloaded from the 10x Genomics data repository:  
 🔗 [10x Genomics](https://www.10xgenomics.com/datasets?configure%5BhitsPerPage%5D=50&configure%5BmaxValuesPerFacet%5D=1000&page=2)
 
 For detailed dataset information, please refer to the **Data Availability** section of the paper.
@@ -65,14 +65,14 @@ We provide detailed tutorials to help you preprocess datasets from different pla
 
 ---
 
-## 🚀 Demo: Training TransSR and Predicting High-Resolution Gene Expression (Mouse Brain)
+## 🚀 Demo: Training SpotZoomer and Predicting High-Resolution Gene Expression (Mouse Brain)
 
 Due to its large size, the demo dataset is hosted on Zenodo:  
 📦 [Download from Zenodo](https://zenodo.org/records/15878397)
 
 After downloading, place the files in the project's `data/` directory.
 
-A complete tutorial is available that walks you through training TransSR and visualizing the predicted high-resolution gene expression:
+A complete tutorial is available that walks you through training SpotZoomer and visualizing the predicted high-resolution gene expression:
 
 - 📘 [Tutorial3-Demo in MouseBrain.ipynb](Tutorial3-Demo%20in%20MouseBrain.ipynb)
 
@@ -80,7 +80,7 @@ A complete tutorial is available that walks you through training TransSR and vis
 
 ## 📊 Baseline Methods
 
-We compare TransSR against several representative baseline methods.  
+We compare SpotZoomer against several representative baseline methods.  
 We sincerely thank the authors for their open-source contributions:
 
 - [**iStar**](https://github.com/daviddaiweizhang/istar): Predicts super-resolution gene expression from hierarchical histological features using a feedforward neural network.  
