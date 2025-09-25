@@ -1,8 +1,8 @@
-# TransSR
+# SpotZoomer
 
 **Generating super-resolution spatial transcriptomics data by transfer learning**
 
-TransSR is a deep generative model designed to enhance the spatial resolution of Visium data by transferring knowledge from high-resolution spatial transcriptomics platforms.
+SpotZoomer is a deep generative model designed to enhance the spatial resolution of Visium data by transferring knowledge from high-resolution spatial transcriptomics platforms.
 
 ![model.png](model.png)
 
